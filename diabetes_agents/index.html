@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dự đoán tiểu đường — demo đa agent</title>
+  <style>
+    :root{font-family:system-ui,sans-serif;color:#163147;background:#f3f7f8}body{max-width:1000px;margin:36px auto;padding:0 18px}
+    h1{margin-bottom:6px}p{line-height:1.55}.card{background:white;border:1px solid #dae5e8;border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 4px 20px #1232}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}label{display:block;font-weight:600;font-size:.9rem}input{display:block;width:100%;box-sizing:border-box;margin-top:6px;padding:10px;border:1px solid #a9bbc2;border-radius:8px;font:inherit}
+    button{background:#0b6671;color:white;border:0;border-radius:8px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer;margin-top:18px}button:disabled{opacity:.6}
+    .notice{background:#fff4d8;border-left:4px solid #d89916;padding:12px 16px}.score{font-size:2rem;font-weight:800;color:#0b6671}
+    a{color:#075d8b;overflow-wrap:anywhere}li{margin:12px 0}.muted{color:#526772;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <h1>Demo dự đoán tiểu đường đa agent</h1>
+  <p>Nhập thông số theo định nghĩa của bộ dữ liệu Pima. Các agent kiểm tra dữ liệu, tính điểm mô hình, tìm tài liệu Vinmec trong Neo4j và giải thích kết quả.</p>
+  <div class="notice">Chỉ dùng cho học tập. Mô hình được huấn luyện trên phụ nữ Pima từ 21 tuổi, không đại diện cho dân số chung. Không dùng kết quả để chẩn đoán hoặc quyết định điều trị.</div>
+  <div class="card"><h2>Hỏi đáp RAG từ KB Vinmec</h2>
+    <p>Ứng dụng tìm đoạn liên quan trong Neo4j, sau đó tạo câu trả lời có dẫn nguồn bằng Gemini. Cần cấu hình <code>GEMINI_API_KEY</code> trong <code>.env</code>.</p>
+    <form id="rag-form"><label>Câu hỏi của bạn<input id="question" type="text" minlength="5" maxlength="1000" placeholder="Ví dụ: Những xét nghiệm nào dùng để chẩn đoán tiểu đường?" required></label><button id="rag-submit">Hỏi KB</button></form>
+    <div id="rag-result" aria-live="polite"></div>
+  </div>
+  <div class="card"><h2>Thông số đầu vào</h2>
+    <form id="form"><div class="grid">
+      <label>Số lần mang thai<input name="pregnancies" type="number" min="0" max="20" value="1" required></label>
+      <label>Glucose 2 giờ sau uống đường (mg/dL)<input name="glucose" type="number" min="1" max="400" value="120" required></label>
+      <label>Huyết áp tâm trương (mmHg)<input name="blood_pressure" type="number" min="1" max="250" value="70"></label>
+      <label>Độ dày nếp gấp da (mm)<input name="skin_thickness" type="number" min="1" max="100" placeholder="Có thể bỏ trống"></label>
+      <label>Insulin 2 giờ (µU/mL)<input name="insulin" type="number" min="1" max="1000" placeholder="Có thể bỏ trống"></label>
+      <label>BMI (kg/m²)<input name="bmi" type="number" min="0.1" max="80" step="0.1" value="28.0" required></label>
+      <label>Chỉ số phả hệ Pima<input name="diabetes_pedigree" type="number" min="0" max="3" step="0.001" value="0.5" required></label>
+      <label>Tuổi (từ 21)<input name="age" type="number" min="21" max="120" value="35" required></label>
+    </div><button id="submit">Tính điểm và tra KB</button></form>
+  </div>
+  <div id="result" class="card" hidden aria-live="polite"></div>
+  <script>
+    const form=document.getElementById('form'),result=document.getElementById('result'),button=document.getElementById('submit');
+    const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();button.disabled=true;result.hidden=false;result.textContent='Đang tính toán...';
+      const data=Object.fromEntries(new FormData(form));for(const k in data)data[k]=data[k]===''?null:Number(data[k]);
+      try{
+        const response=await fetch('/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        const payload=await response.json();if(!response.ok)throw Error(typeof payload.detail==='string'?payload.detail:JSON.stringify(payload.detail));
+        const refs=payload.sources.map(s=>`<li><a href="${encodeURI(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.title)}</a><br><span class="muted">${escapeHtml(s.excerpt)}</span></li>`).join('');
+        result.innerHTML=`<h2>Kết quả minh họa</h2><div class="score">${(payload.prediction.score*100).toFixed(1)}%</div><p>${escapeHtml(payload.explanation)}</p><p class="muted">Accuracy trên tập kiểm tra: ${escapeHtml(payload.prediction.metrics.accuracy)}; ROC AUC: ${escapeHtml(payload.prediction.metrics.roc_auc)}. Đây là đánh giá nội bộ trên bộ Pima.</p><h3>Tài liệu Vinmec liên quan</h3>${refs?`<ul>${refs}</ul>`:'<p>Chưa có đoạn KB phù hợp.</p>'}`;
+      }catch(err){result.textContent='Lỗi: '+err.message;}finally{button.disabled=false;}
+    });
+    document.getElementById('rag-form').addEventListener('submit',async e=>{
+      e.preventDefault();const button=document.getElementById('rag-submit'),target=document.getElementById('rag-result');
+      button.disabled=true;target.textContent='Đang tìm KB và tạo câu trả lời...';
+      try{
+        const response=await fetch('/rag/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:document.getElementById('question').value})});
+        const payload=await response.json();if(!response.ok)throw Error(typeof payload.detail==='string'?payload.detail:JSON.stringify(payload.detail));
+        const refs=payload.sources.map(s=>`<li>[${s.number}] <a href="${encodeURI(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.title)}</a><br><span class="muted">${escapeHtml(s.excerpt)}</span></li>`).join('');
+        target.innerHTML=`<h3>Trả lời</h3><p>${escapeHtml(payload.answer).replace(/\n/g,'<br>')}</p><h4>Đoạn KB được truy xuất</h4>${refs?`<ol>${refs}</ol>`:'<p>Không có nguồn phù hợp.</p>'}`;
+      }catch(err){target.textContent='Lỗi: '+err.message;}finally{button.disabled=false;}
+    });
+  </script>
+</body>
+</html>
