@@ -1,0 +1,29 @@
+{
+  "pdf_sha256": "b9221fd1d23bf360f77c79029d78f2e655fc9be70cd8e7b8bc5aede506ab0844",
+  "passages": [
+    {
+      "page_start": 14,
+      "section": "Sàng lọc đái tháo đường thai kỳ ở tuần 24–28",
+      "purpose": "diagnosis",
+      "text": "QĐ 1470/QĐ-BYT mô tả sàng lọc đái tháo đường thai kỳ vào tuần 24–28 bằng nghiệm pháp dung nạp glucose đường uống 75 g (OGTT). Mẫu glucose huyết tương tĩnh mạch được lấy lúc đói, sau uống 1 giờ và sau uống 2 giờ. Đây là ba thời điểm của cùng một nghiệm pháp thai kỳ."
+    },
+    {
+      "page_start": 15,
+      "section": "Bảng 3 · Ngưỡng OGTT 75 g trong thai kỳ",
+      "purpose": "diagnosis",
+      "text": "Bảng 3 của hướng dẫn thai kỳ áp dụng cho glucose huyết tương tĩnh mạch trong OGTT 75 g. Mốc lúc đói là ≥92 mg/dL (≥5,1 mmol/L); sau 1 giờ là ≥180 mg/dL (≥10,0 mmol/L); sau 2 giờ là ≥153 mg/dL (≥8,5 mmol/L). Bảng ghi rằng ít nhất một giá trị đạt hoặc vượt mốc đáp ứng tiêu chuẩn chẩn đoán đái tháo đường thai kỳ theo nghiệm pháp này."
+    },
+    {
+      "page_start": 15,
+      "section": "Bảng 4 · Theo dõi glucose mao mạch trong thai kỳ",
+      "purpose": "management",
+      "text": "Ở phần quản lý thai kỳ, Bảng 4 đưa ra các mục tiêu glucose huyết tương mao mạch để theo dõi lúc đói và sau ăn. Đây là phần theo dõi quản lý, khác với ngưỡng chẩn đoán bằng glucose huyết tương tĩnh mạch trong nghiệm pháp OGTT ở Bảng 3."
+    },
+    {
+      "page_start": 30,
+      "section": "Đánh giá glucose sau sinh ở người từng mắc đái tháo đường thai kỳ",
+      "purpose": "diagnosis",
+      "text": "Chương quản lý sau sinh của QĐ 1470/QĐ-BYT nêu đánh giá rối loạn chuyển hóa glucose ở người từng mắc đái tháo đường thai kỳ trong khoảng 4–12 tuần sau sinh, bằng nghiệm pháp dung nạp glucose đường uống 75 g, theo dõi trong 2 giờ."
+    }
+  ]
+}

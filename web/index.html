@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dự đoán tiểu đường | Diabet</title>
+  <link rel="stylesheet" href="/static/styles.css?v=diabet-main-1">
+  <script src="/static/app.js?v=rag-policy-1" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="/"><span class="brand-icon" aria-hidden="true">+</span>Diabet</a>
+    </div>
+  </header>
+  <main class="container">
+    <div class="intro">
+      <h1>Dự đoán tiểu đường</h1>
+      <p>Nhập 5 thông tin sức khỏe để xem điểm tham khảo từ mô hình BRFSS.</p>
+    </div>
+    <div class="workspace">
+      <section class="panel" aria-labelledby="input-title">
+        <h2 id="input-title">Thông tin sức khỏe</h2>
+        <form id="prediction-form">
+          <fieldset>
+            <legend>Thông tin chung</legend>
+            <div class="fields">
+              <label>Nhóm tuổi
+                <select name="Age" required>
+                  <option value="" selected disabled>Chọn nhóm tuổi</option>
+                  <option value="1">18–24</option>
+                  <option value="2">25–29</option>
+                  <option value="3">30–34</option>
+                  <option value="4">35–39</option>
+                  <option value="5">40–44</option>
+                  <option value="6">45–49</option>
+                  <option value="7">50–54</option>
+                  <option value="8">55–59</option>
+                  <option value="9">60–64</option>
+                  <option value="10">65–69</option>
+                  <option value="11">70–74</option>
+                  <option value="12">75–79</option>
+                  <option value="13">Từ 80 tuổi</option>
+                </select>
+              </label>
+              <label>BMI (kg/m²)
+                <input name="BMI" type="number" min="0.01" step="any" inputmode="decimal" placeholder="Ví dụ 24,5" required>
+              </label>
+              <label class="field-wide">Sức khỏe tự đánh giá
+                <select name="GenHlth" required>
+                  <option value="" selected disabled>Chọn mức sức khỏe</option>
+                  <option value="1">Xuất sắc</option><option value="2">Rất tốt</option>
+                  <option value="3">Tốt</option><option value="4">Trung bình</option><option value="5">Kém</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Tiền sử sức khỏe</legend>
+            <div class="fields">
+              <label>Từng được báo huyết áp cao
+                <select name="HighBP" required>
+                  <option value="" selected disabled>Chọn câu trả lời</option>
+                  <option value="1">Có</option><option value="0">Không</option>
+                </select>
+              </label>
+              <label>Từng được báo cholesterol cao
+                <select name="HighChol" required>
+                  <option value="" selected disabled>Chọn câu trả lời</option>
+                  <option value="1">Có</option><option value="0">Không</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+          <button id="prediction-submit" type="submit">Xem kết quả</button>
+        </form>
+      </section>
+      <div class="report-column">
+        <section class="panel report-panel" aria-labelledby="report-title">
+          <h2 id="report-title">Báo cáo dự đoán</h2>
+          <p id="prediction-status" class="muted" role="status">Điền thông tin sức khỏe và chọn “Xem kết quả” để tính điểm.</p>
+          <div id="prediction-result" hidden></div>
+        </section>
+        <section class="panel" id="follow-up" aria-labelledby="follow-up-title">
+          <h2 id="follow-up-title">Trò chuyện</h2>
+          <div id="messages" role="log" aria-label="Cuộc trò chuyện"></div>
+          <form id="question-form">
+            <label for="question">Tin nhắn</label>
+            <textarea id="question" rows="2" maxlength="1000" placeholder="Nhập tin nhắn…" required></textarea>
+            <button id="question-submit" type="submit">Gửi</button>
+            <button id="new-chat" class="secondary" type="button">Cuộc trò chuyện mới</button>
+            <p id="question-status" class="muted" role="status"></p>
+          </form>
+          <details class="muted">
+            <summary>Thông tin về dữ liệu chat</summary>
+            <p>Lịch sử phiên chat được lưu tạm trong RAM và có thể gửi cùng câu hỏi tới mô hình hội thoại. Chỉ dùng dữ liệu mẫu hoặc đã khử định danh.</p>
+          </details>
+        </section>
+      </div>
+    </div>
+    <footer>BRFSS 2015 · Khảo sát sức khỏe người trưởng thành tại Hoa Kỳ. Điểm mô hình phục vụ học tập và không dùng để chẩn đoán.</footer>
+  </main>
+</body>
+</html>
+

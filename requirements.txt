@@ -1,10 +1,16 @@
 fastapi>=0.115,<1
 uvicorn[standard]>=0.34,<1
 neo4j>=5.28,<7
-scikit-learn>=1.6,<2
+scikit-learn==1.6.1
 pandas>=2.2,<3
 joblib>=1.4,<2
 requests>=2.32,<3
 beautifulsoup4>=4.13,<5
 python-dotenv>=1,<2
 google-genai>=1.40,<2
+openai>=1.68,<3
+pymysql>=1.1,<2
+onnxruntime>=1.20,<2
+tokenizers>=0.21,<1
+pymupdf>=1.24,<2
+langgraph>=1,<2

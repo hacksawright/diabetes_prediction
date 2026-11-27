@@ -1,0 +1,227 @@
+[
+  {
+    "id": "niddk-kidney",
+    "publisher": "NIDDK",
+    "title": "Bệnh thận do đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-kidney-disease",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-type1",
+    "publisher": "CDC",
+    "title": "Đái tháo đường típ 1",
+    "url": "https://www.cdc.gov/diabetes/about/about-type-1-diabetes.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-type1-screening",
+    "publisher": "CDC",
+    "title": "Sàng lọc đái tháo đường típ 1 ở trẻ em và người lớn",
+    "url": "https://www.cdc.gov/diabetes/diabetes-testing/screening-type-1-diabetes.html",
+    "format": "web",
+    "language": "en",
+    "audience": ["general", "pediatric"]
+  },
+  {
+    "id": "cdc-prediabetes",
+    "publisher": "CDC",
+    "title": "Tiền đái tháo đường và phòng ngừa típ 2",
+    "url": "https://www.cdc.gov/diabetes-prevention/about-prediabetes-type-2/index.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-risk",
+    "publisher": "CDC",
+    "title": "Yếu tố nguy cơ đái tháo đường",
+    "url": "https://www.cdc.gov/diabetes/risk-factors/index.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-symptoms",
+    "publisher": "CDC",
+    "title": "Dấu hiệu và triệu chứng đái tháo đường",
+    "url": "https://www.cdc.gov/diabetes/signs-symptoms/index.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-tests",
+    "publisher": "NIDDK",
+    "title": "Xét nghiệm HbA1c, đường huyết đói và OGTT",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-type2",
+    "publisher": "NIDDK",
+    "title": "Đái tháo đường típ 2",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-gestational",
+    "publisher": "NIDDK",
+    "title": "Đái tháo đường thai kỳ",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational",
+    "format": "web",
+    "language": "en",
+    "audience": "pregnancy"
+  },
+  {
+    "id": "niddk-gestational-tests",
+    "publisher": "NIDDK",
+    "title": "Tầm soát và xét nghiệm đái tháo đường thai kỳ",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/gestational/tests-diagnosis",
+    "format": "web",
+    "language": "en",
+    "audience": "pregnancy"
+  },
+  {
+    "id": "niddk-pregnancy",
+    "publisher": "NIDDK",
+    "title": "Theo dõi trong thai kỳ và sau sinh",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/diabetes-pregnancy",
+    "format": "web",
+    "language": "en",
+    "audience": "pregnancy"
+  },
+  {
+    "id": "cdc-meal",
+    "publisher": "CDC",
+    "title": "Lập kế hoạch bữa ăn cho người đái tháo đường",
+    "url": "https://www.cdc.gov/diabetes/healthy-eating/diabetes-meal-planning.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-living",
+    "publisher": "NIDDK",
+    "title": "Dinh dưỡng và vận động khi sống với đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/healthy-living-with-diabetes",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-medicines",
+    "publisher": "NIDDK",
+    "title": "Insulin, thuốc và các phương pháp điều trị đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/insulin-medicines-treatments",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-monitor",
+    "publisher": "CDC",
+    "title": "Đo và theo dõi đường huyết tại nhà",
+    "url": "https://www.cdc.gov/diabetes/treatment/",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-cgm",
+    "publisher": "CDC",
+    "title": "Máy đo đường huyết liên tục CGM",
+    "url": "https://www.cdc.gov/diabetes/treatment/continuous-glucose-monitors.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-hypo",
+    "publisher": "NIDDK",
+    "title": "Hạ đường huyết",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-dka",
+    "publisher": "CDC",
+    "title": "Nhiễm toan ceton đái tháo đường DKA",
+    "url": "https://www.cdc.gov/diabetes/about/diabetic-ketoacidosis.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "cdc-sick",
+    "publisher": "CDC",
+    "title": "Theo dõi đái tháo đường khi bị ốm",
+    "url": "https://www.cdc.gov/diabetes/living-with/managing-sick-days.html",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-complications",
+    "publisher": "NIDDK",
+    "title": "Tổng quan biến chứng đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-foot",
+    "publisher": "NIDDK",
+    "title": "Chăm sóc bàn chân và loét chân do đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-eye",
+    "publisher": "NIDDK",
+    "title": "Biến chứng mắt, bệnh võng mạc đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-eye-disease",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-heart",
+    "publisher": "NIDDK",
+    "title": "Bệnh tim mạch và đột quỵ liên quan đến đái tháo đường",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "niddk-nerve",
+    "publisher": "NIDDK",
+    "title": "Biến chứng thần kinh ngoại biên",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/nerve-damage-diabetic-neuropathies/peripheral-neuropathy",
+    "format": "web",
+    "language": "en"
+  },
+  {
+    "id": "moh-5481",
+    "publisher": "Bộ Y tế Việt Nam",
+    "title": "QĐ 5481/QĐ-BYT · Hướng dẫn đái tháo đường típ 2",
+    "url": "https://syt.dongnai.gov.vn/vi/van-ban/detail/V-v-trien-khai-thuc-hien-Quyet-dinh-so-5481-QD-BYT-ngay-30-12-2020-cua-Bo-truong-Bo-Y-te-4905/?download=1&id=0",
+    "format": "pdf",
+    "language": "vi",
+    "published_at": "2020-12-30",
+    "segments": [
+      {"first": 10, "last": 10, "section": "Định nghĩa đái tháo đường"},
+      {"first": 11, "last": 11, "section": "Tiêu chuẩn chẩn đoán đái tháo đường, HbA1c, đường huyết lúc đói và OGTT", "purpose": "diagnosis", "audience": "general"},
+      {"first": 13, "last": 16, "section": "Phân loại đái tháo đường và đánh giá toàn diện"},
+      {"first": 18, "last": 19, "section": "Xét nghiệm khi theo dõi đái tháo đường", "purpose": "management", "tables": [18, 19]},
+      {"first": 29, "last": 34, "section": "Dinh dưỡng, vận động và thay đổi lối sống", "purpose": "management"},
+      {"first": 42, "last": 42, "section": "Nhận diện hạ đường huyết"},
+      {"first": 50, "last": 53, "section": "Biến chứng mắt, thận, thần kinh, tim mạch và bàn chân", "purpose": "management"}
+    ]
+  },
+  {
+    "id": "moh-1470",
+    "publisher": "Bộ Y tế Việt Nam",
+    "title": "QĐ 1470/QĐ-BYT · Hướng dẫn quốc gia về đái tháo đường thai kỳ",
+    "url": "https://files01.duytan.edu.vn/svruploads/kdieuduong-duytan/638987328526598548-5016trienkhaiqd1470cuabytvebanhanhtaiieuchuyenmonhuongdanquocg109202416.pdf",
+    "format": "pdf",
+    "language": "vi",
+    "audience": "pregnancy",
+    "published_at": "2024-05-29",
+    "reviewed_notes": "moh_1470_notes.json"
+  }
+]
